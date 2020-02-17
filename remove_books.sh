@@ -1,4 +1,6 @@
 rm *.pdf
+rm *.PDF
 rm *.epub
 rm *.mobi
-rm *.awz3
+rm *.azw3
+
