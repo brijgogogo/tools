@@ -67,8 +67,11 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *screenshot[] = { "maim-shot", "-P", NULL };
 static const char *slock[]      = { "slock", NULL };
-static const char *backlightplus[]      = { "xbacklight", "-inc", "15", NULL };
-static const char *backlightminus[]      = { "xbacklight", "-dec", "15", NULL };
+static const char *backlightinc[]      = { "xbacklight", "-inc", "15", NULL };
+static const char *backlightdec[]      = { "xbacklight", "-dec", "15", NULL };
+static const char *mastervolinc[]      = { "master_vol_inc", NULL };
+static const char *mastervoldec[]      = { "master_vol_dec", NULL };
+static const char *togglemic[]      = { "toggle-mic", NULL };
 // static const char scratchpadname[] = "scratchpad";
 // static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, "-d", "120", "34", NULL };
 
@@ -79,8 +82,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,            spawn,          {.v = browser } },
         { MODKEY,                       XK_p,            spawn,          {.v = screenshot } },
         { MODKEY|ShiftMask,             XK_l,            spawn,          {.v = slock } },
-        { MODKEY,                       XK_bracketleft,  spawn,          {.v = backlightminus } },
-        { MODKEY,                       XK_bracketright, spawn,          {.v = backlightplus } },
+        { MODKEY,                       XK_apostrophe,   spawn,          {.v = togglemic } },
+        { MODKEY,                       XK_bracketleft,  spawn,          {.v = mastervoldec } },
+        { MODKEY,                       XK_bracketright, spawn,          {.v = mastervolinc } },
+        { MODKEY,                       XK_braceleft,    spawn,          {.v = backlightdec } },
+        { MODKEY,                       XK_braceright,   spawn,          {.v = backlightinc } },
 	{ MODKEY,                       XK_b,            togglebar,      {0} },
 	{ MODKEY,                       XK_j,            focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,            focusstack,     {.i = -1 } },
